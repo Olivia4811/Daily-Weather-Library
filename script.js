@@ -81,7 +81,7 @@ for (var i= 0; i < mainCondition.length; i++) {
     } return(totalDailyAvg/count)
     }
 
-    console.log(getAvgHumidity("Las Vegas"))
+    console.log(getAvgHumidity("Las Vegas".trim())
 
 
 /*Returns the city with the highest temperature for a certain state

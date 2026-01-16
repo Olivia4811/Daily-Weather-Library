@@ -35,41 +35,41 @@ for (var i= 0; i < mainCondition.length; i++) {
 
 
 
-    //find the average temperature of all cities in a certain state
-    //returns the averge temperature as a number
-    //stateName {string} - the desired state
-    //return {number} - the averge temperature of cities in the state
-    function getAvgTemp(stateName){ 
-        var totalDailyAvg = 0;
-        var count= 0; 
-        for(var i = 0; i < state.length; i++){
-            if(state[i].toLowerCase() === stateName.toLowerCase()) {
-                var cityAvg = (Number(highTemperature[i]) + Number(lowTemperature[i]))/2;
-            totalDailyAvg += cityAvg;
-            count++
+//find the average temperature of all cities in a certain state
+//returns the averge temperature as a number
+//stateName {string} - the desired state
+//return {number} - the averge temperature of cities in the state
+function getAvgTemp(stateName){ 
+    var totalDailyAvg = 0;
+    var count= 0; 
+    for(var i = 0; i < state.length; i++){
+        if(state[i].toLowerCase() === stateName.toLowerCase()) {
+            var cityAvg = (Number(highTemperature[i]) + Number(lowTemperature[i]))/2;
+        totalDailyAvg += cityAvg;
+        count++
             }
         } return (totalDailyAvg/count)
     }
     console.log(getAvgTemp("Alabama".trim()))
 
 
-    //finds the average humidity in a certain city 
-    //returns the average humidity in a certain city 
-    //cityName {string} - the desired city
-    //return {number} - the average humidity in a city 
-    function getAvgHumidity(cityName) {
-    var totalDailyAvg = 0 
-    var count = 0 
-    //loop through list 
-    for (var i = 0; i < city.length;i++){
-        if(city[i].toLowerCase() === cityName.toLowerCase()) {
-           totalDailyAvg += (Number(humidityPercentage[i])); 
-           count++
+//finds the average humidity in a certain city 
+//returns the average humidity in a certain city 
+//cityName {string} - the desired city
+//return {number} - the average humidity in a city 
+function getAvgHumidity(cityName) {
+var totalDailyAvg = 0 
+var count = 0 
+//loop through list 
+for (var i = 0; i < city.length;i++){
+    if(city[i].toLowerCase() === cityName.toLowerCase()) {
+        totalDailyAvg += (Number(humidityPercentage[i])); 
+        count++
         }
     } return(totalDailyAvg/count)
-    }
+}
 
-    console.log(getAvgHumidity("Las Vegas".trim())
+console.log(getAvgHumidity("Las Vegas".trim())
 
 
 /*Returns the city with the highest temperature for a certain state

@@ -12,23 +12,20 @@ var humidityPercentage = getColumn(url, 10)
 //stateName {string} - the desired state
 //return mostFrequent{string} - the name of the most frequent condition in the state
 function getCondition(stateName) {
-var condition = 0; //keeps track of highest number of occurences found so far
-var mostFrequent = "State Not Found"; //stores name of weather that has highest count
-//go through dataset
+var condition = 0; 
+var mostFrequent = "State Not Found"; 
 for (var i= 0; i < mainCondition.length; i++) { 
-    //see if state in current row matches inputted state
     if(state[i].toLowerCase() === stateName.toLowerCase()) {
-        //pick weather from that row to test it
-        var currentWeather = mainCondition[i] //make that weather the maincondition
-        var count= 0; //reset to zero for next weather
-    for (var j = 0; j < state.length; j++) { //scans the list again to see how many times the now current weather appeared 
+        var currentWeather = mainCondition[i] 
+        var count= 0;
+    for (var j = 0; j < state.length; j++) { 
         if (state[j].toLowerCase() === stateName.toLowerCase() && mainCondition[j] === currentWeather) {
-            count++; //add one to count if it matches
+            count++; 
         }
     }
-    if (count > condition) { //after counting, check which is the highest condition number found
-                condition = count; //update score
-                mostFrequent = currentWeather; //save to variable
+    if (count > condition) { 
+                condition = count; 
+                mostFrequent = currentWeather; 
             }
         }
     }
@@ -43,20 +40,14 @@ for (var i= 0; i < mainCondition.length; i++) {
     //stateName {string} - the desired state
     //return {number} - the averge temperature of cities in the state
     function getAvgTemp(stateName){ 
-        var totalDailyAvg = 0;//running total of all averages ofund
+        var totalDailyAvg = 0;
         var count= 0; 
-        //loop through list
         for(var i = 0; i < state.length; i++){
-            //check if state matches input
             if(state[i].toLowerCase() === stateName.toLowerCase()) {
-            //calculate the average for that city
-            //number to ensure data is treated as math
                 var cityAvg = (Number(highTemperature[i]) + Number(lowTemperature[i]))/2;
-            //add that city's average to the total, increment the counter    
             totalDailyAvg += cityAvg;
             count++
             }
-            //divide the sum of all averages by the number of cities found
         } return (totalDailyAvg/count)
     }
     console.log(getAvgTemp("Alabama".trim()))
@@ -67,17 +58,14 @@ for (var i= 0; i < mainCondition.length; i++) {
     //cityName {string} - the desired city
     //return {number} - the average humidity in a city 
     function getAvgHumidity(cityName) {
-    var totalDailyAvg = 0 //running total of all averages found
+    var totalDailyAvg = 0 
     var count = 0 
     //loop through list 
     for (var i = 0; i < city.length;i++){
-        //check if city matches inputted city name
         if(city[i].toLowerCase() === cityName.toLowerCase()) {
-            //adds that city's average humidity to the total, and increments the counter
            totalDailyAvg += (Number(humidityPercentage[i])); 
            count++
         }
-        //divide the sum of all averages by the count 
     } return(totalDailyAvg/count)
     }
 

@@ -7,10 +7,11 @@ var lowTemperature = getColumn (url, 8)
 var highTemperature = getColumn (url, 9)
 var humidityPercentage = getColumn(url, 10)
 
-//finds the most frequent condition in a certain state
-//returns the name of the most frequent condition
-//stateName {string} - the desired state
-//return mostFrequent{string} - the name of the most frequent condition in the state
+/*finds the most frequent condition in a certain state
+Returns the name of the most frequent weather condition
+@param stateName {string} - the desired state
+@return mostFrequent {string} - the name of the most frequent condition in desired state
+*/
 function getCondition(stateName) {
 var condition = 0; 
 var mostFrequent = "State Not Found"; 

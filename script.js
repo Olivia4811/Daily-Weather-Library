@@ -53,11 +53,12 @@ function getAvgTemp(stateName){
     }
     console.log(getAvgTemp("Alabama".trim()))
 
-
-//finds the average humidity in a certain city 
-//returns the average humidity in a certain city 
-//cityName {string} - the desired city
-//return {number} - the average humidity in a city 
+/*
+Finds the average humidity in a certain city
+Returns the average humidity in a certain city
+@param cityName {string} - the desired city
+@return (totalDailyAvg/count) {number} - the average humidity in a city
+*/
 function getAvgHumidity(cityName) {
 var totalDailyAvg = 0 
 var count = 0 

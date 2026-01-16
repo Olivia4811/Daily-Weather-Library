@@ -35,11 +35,11 @@ for (var i= 0; i < mainCondition.length; i++) {
     console.log(getCondition("New Hampshire".trim()))
 
 
-
-//find the average temperature of all cities in a certain state
-//returns the averge temperature as a number
-//stateName {string} - the desired state
-//return {number} - the averge temperature of cities in the state
+/*Find the average temperature of all cities in a certain state
+Returns the average temperature of all cities in a certain state
+@param stateName {string} - the desired state
+@return (totalDailyAvg/count) {number} - the average temperature as a number of all cities in a certain state
+*/
 function getAvgTemp(stateName){ 
     var totalDailyAvg = 0;
     var count= 0; 

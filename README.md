@@ -35,6 +35,6 @@ The function conditionBreakdown() returns the specific weather condition descrip
 #
 ##### Returns weather condition descriptions and their frequencies for a specific main weather condition in a certain state
 ###### @param chosenState {string} - desired state
-###### @param chosenCondition - desired main weather condition
+###### @param chosenCondition - desired main weather condition (clouds, clear, snow, or rain)
 ###### @return conditionStats {string} - each condition and the number of times it has been recorded 
 **` function conditionBreakdown(chosenState, chosenCondition)`**
